@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img2"
+    tools:context=".Registerpage">
+
+    <ScrollView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_centerHorizontal="true"
+                android:text="Registration"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="36dp"/>
+
+            <EditText
+                android:id="@+id/rollno_"
+                android:layout_width="218dp"
+                android:layout_height="44dp"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:ems="10"
+                android:hint="Roll Number"
+                android:textSize="20dp"
+                android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
+
+            <EditText
+                android:id="@+id/Name_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/rollno_"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:hint="Name"
+                android:textSize="20dp"
+                android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <EditText
+                android:id="@+id/Password_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/Name_"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:textSize="20dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <EditText
+                android:id="@+id/Password1_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/Password_"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <EditText
+                android:id="@+id/Email_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/Password1_"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:hint="Email"
+                android:textSize="20dp"
+                android:inputType="textEmailAddress"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <EditText
+                android:id="@+id/Phone_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/Email_"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:textSize="20dp"
+                android:inputType="phone"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <EditText
+                android:id="@+id/Dob_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Phone_"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:ems="10"
+                android:hint="Date Of Birth"
+                android:textSize="20dp"
+                android:inputType="date"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <Button
+                android:id="@+id/Date_"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_below="@+id/Phone_"
+                android:layout_toRightOf="@+id/Dob_"
+                android:text="Date"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/buttonshape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/Phone1_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/Dob_"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:hint=" Parent Phone Number 1"
+                android:textSize="20dp"
+                android:inputType="phone"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <EditText
+                android:id="@+id/Phone2_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/Phone1_"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:hint=" Parent Phone Number 2"
+                android:textSize="20dp"
+                android:inputType="phone"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <Spinner
+                android:id="@+id/Hostel_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Phone2_"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <EditText
+                android:id="@+id/Roomno_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Hostel_"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:hint="Room Number"
+                android:textSize="20dp"
+                android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"/>
+
+            <Button
+                android:id="@+id/Submit_"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginBottom="25dp"
+                android:layout_below="@+id/Roomno_"
+                android:text="Submit"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:background="@drawable/buttonshape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textSize="22sp"/>
+
+            <Button
+                android:id="@+id/clear_"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="25dp"
+                android:layout_below="@+id/Roomno_"
+                android:layout_toRightOf="@+id/Submit_"
+                android:layout_marginLeft="50dp"
+                android:text="Clear"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@drawable/buttonshape"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textSize="22sp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
