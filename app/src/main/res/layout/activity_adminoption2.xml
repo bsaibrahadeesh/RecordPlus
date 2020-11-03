@@ -5,7 +5,7 @@
     android:id="@+id/color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img5"
+    android:background="@drawable/img"
     tools:context=".adminoption2">
 
 

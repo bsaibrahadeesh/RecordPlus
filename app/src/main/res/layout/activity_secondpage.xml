@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img2"
+    android:background="@drawable/img"
     tools:context=".secondpage">
 
     <TextView
@@ -16,7 +16,7 @@
         android:layout_marginTop="70dp"
         android:gravity="center"
         android:text="Don't have an Account?\nRegister to keep your health tracked"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="24sp" />
 
     <Button
@@ -38,10 +38,10 @@
     <View
         android:id="@+id/sep"
         android:layout_width="fill_parent"
-        android:layout_height="5dp"
+        android:layout_height="3dp"
         android:layout_below="@+id/Registered"
         android:layout_marginTop="80dp"
-        android:background="#E0EC6C" />
+        android:background="#FFFFFF" />
 
     <TextView
         android:id="@+id/log"
@@ -50,7 +50,7 @@
         android:layout_below="@+id/sep"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:gravity="center"
         android:text="Already have an Account?\nCheck out the reports"
         android:textSize="24sp" />

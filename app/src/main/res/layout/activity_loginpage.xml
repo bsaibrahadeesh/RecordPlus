@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img2"
+    android:background="@drawable/img"
     tools:context=".secondpage">
 
 
@@ -16,6 +16,7 @@
         android:layout_centerHorizontal="true"
         android:text="User Login"
         android:textStyle="bold"
+        android:textColor="@android:color/white"
         android:textSize="24sp"/>
 
     <EditText
@@ -64,10 +65,10 @@
     <View
         android:id="@+id/sep2"
         android:layout_width="fill_parent"
-        android:layout_height="5dp"
+        android:layout_height="3dp"
         android:layout_below="@+id/login1"
         android:layout_marginTop="30dp"
-        android:background="#E0EC6C" />
+        android:background="#FFFFFF" />
 
     <TextView
         android:id="@+id/adminlog"
@@ -78,6 +79,7 @@
         android:layout_below="@+id/sep2"
         android:text="Admin Login"
         android:textStyle="bold"
+        android:textColor="@android:color/white"
         android:textSize="24sp"/>
 
     <EditText
