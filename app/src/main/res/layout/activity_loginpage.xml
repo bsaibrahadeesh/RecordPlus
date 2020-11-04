@@ -7,10 +7,13 @@
     android:background="@drawable/img"
     tools:context=".secondpage">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <TextView
         android:id="@+id/userlog"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

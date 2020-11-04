@@ -8,13 +8,16 @@
     android:background="@drawable/img"
     tools:context=".adminoption3">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <Spinner
         android:id="@+id/docname"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="80dp" />
 
     <EditText
         android:id="@+id/startdate"

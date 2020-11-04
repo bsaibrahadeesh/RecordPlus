@@ -1,6 +1,7 @@
 package com.example.healthproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -9,6 +10,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,6 +37,12 @@ public class adminoption3 extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminoption3);
+
+        Toolbar toolbar =findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         startdate = findViewById(R.id.startdate);
         enddate = findViewById(R.id.enddate);
         time = findViewById(R.id.time);
@@ -55,13 +63,24 @@ public class adminoption3 extends AppCompatActivity implements View.OnClickListe
         date2.setOnClickListener(this);
         timebutton.setOnClickListener(this);
         String Doctorname[]={"Doctor 1","Doctor 2","Doctor 3","Doctor 4"};
-        ArrayAdapter<String> adap2=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,Doctorname);
+        ArrayAdapter<String> adap2=new ArrayAdapter<String>(this,R.layout.colour_spinner_layout,Doctorname);
+        adap2.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         docname.setAdapter(adap2);
         docname.setOnItemSelectedListener(this);
         Bundle b=getIntent().getExtras();
         temp1=b.getString("rollno1");
         db = openOrCreateDatabase("AdminDB", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS report(rollno VARCHAR,doctorname VARCHAR,startdate VARCHAR,enddate VARCHAR,time VARCHAR,description VARCHAR,medicine VARCHAR,test VARCHAR);");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

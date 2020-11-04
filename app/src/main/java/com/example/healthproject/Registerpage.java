@@ -2,6 +2,7 @@ package com.example.healthproject;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -37,6 +39,12 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registerpage);
+
+        Toolbar toolbar =findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         rollno=findViewById(R.id.rollno_);
         name=findViewById(R.id.Name_);
         pass1=findViewById(R.id.Password_);
@@ -55,13 +63,25 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
         submit.setOnClickListener(this);
         clear.setOnClickListener(this);
         String hostelname[]={"Mythreyi Bhavanam","Gargi Bhavanam","Yagnavalkya Bhavanam","Yagnavalkya Bhavanam Annexe","Agasthya Bhavanam","Vasishta Bhavanam ","Nachiketas Bhavanam","Sri Vyasa Maharishi Bhavanam","Gauthama Bhavanam"};
-        ArrayAdapter<String> adap2=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,hostelname);
+        ArrayAdapter<String> adap2=new ArrayAdapter<String>(this,R.layout.colour_spinner_layout,hostelname);
+        adap2.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         hostel.setAdapter(adap2);
         hostel.setOnItemSelectedListener(this);
         flag=0;
         db = openOrCreateDatabase("StudentDB", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS Student(rollno VARCHAR,name VARCHAR,password VARCHAR,emailid VARCHAR,phonenumber VARCHAR,dateofbirth VARCHAR,parentnumber1 VARCHAR,parentnumber2 VARCHAR,hostel VARCHAR,roomno VARCHAR);");
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     public void onClick(View view)
     {

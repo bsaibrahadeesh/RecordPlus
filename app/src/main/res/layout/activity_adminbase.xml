@@ -7,6 +7,10 @@
     android:background="@drawable/img"
     tools:context=".adminbase">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
     <TextView
         android:id="@+id/TV1"
         android:layout_width="wrap_content"
@@ -15,7 +19,7 @@
         android:textSize="32sp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         android:textColor="#FFFFFF"/>
 
     <EditText
@@ -64,7 +68,7 @@
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/divider"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:textColor="#FFFFFF"/>
 
     <EditText

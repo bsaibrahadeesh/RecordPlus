@@ -1,6 +1,7 @@
 package com.example.healthproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar =findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         b=findViewById(R.id.started);
         b.setOnClickListener(this);
     }

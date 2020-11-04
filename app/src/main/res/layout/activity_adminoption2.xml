@@ -8,6 +8,9 @@
     android:background="@drawable/img"
     tools:context=".adminoption2">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <TextView
         android:id="@+id/color"
