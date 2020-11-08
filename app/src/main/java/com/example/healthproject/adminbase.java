@@ -17,7 +17,7 @@ public class adminbase extends AppCompatActivity{
         setContentView(R.layout.activity_adminbase);
         bottomNavigation = findViewById(R.id.bottom_navigation);
         bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        openFragment(HomeFragment.newInstance("", ""));
+        openFragment(adminbaseoption1.newInstance("", ""));
     }
 
     public void openFragment(Fragment fragment) {
@@ -32,13 +32,13 @@ public class adminbase extends AppCompatActivity{
                 @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
                         case R.id.navigation_home:
-                            openFragment(HomeFragment.newInstance("", ""));
+                            openFragment(adminbaseoption1.newInstance("", ""));
                             return true;
                         case R.id.navigation_sms:
-                            openFragment(SmsFragment.newInstance("", ""));
+                            openFragment(adminbaseoption2.newInstance("", ""));
                             return true;
                         case R.id.navigation_notifications:
-                            openFragment(NotificationFragment.newInstance("", ""));
+                            openFragment(adminbaseoption3.newInstance("", ""));
                             return true;
                     }
                     return false;

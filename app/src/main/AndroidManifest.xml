@@ -9,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".adminbaseopton3"></activity>
-        <activity android:name=".adminbaseoption2" />
-        <activity android:name=".adminbaseoption1" />
         <activity android:name=".adminoption4" />
         <activity android:name=".adminoption3" />
         <activity android:name=".adminoption2" />
