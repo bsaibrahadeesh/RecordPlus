@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_studinfo"
+        android:icon="@drawable/ic_studport"
+        android:title="Student details" />
+
+    <item
+        android:id="@+id/navigation_roommates"
+        android:icon="@drawable/ic_roommates"
+        android:title="Room Mates" />
+
+    <item
+        android:id="@+id/navigation_admincommonsetting"
+        android:icon="@drawable/ic_admincommonsetting"
+        android:title="Setting" />
+</menu>
