@@ -8,14 +8,15 @@
     >
 
     <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/container"
-        >
+        tools:layout_editor_absoluteX="-44dp"
+        tools:layout_editor_absoluteY="102dp">
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar"/>
+            layout="@layout/toolbar" />
         <!-- Main content -->
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,8 +27,7 @@
             android:background="@color/colorPrimary"
             app:itemIconTint="@color/cardview_light_background"
             app:itemTextColor="@color/design_default_color_surface"
-            app:menu="@menu/bottom_navigationadminbase_menu"
-            />
+            app:menu="@menu/bottom_navigationadminbase_menu" />
 
     </FrameLayout>
 

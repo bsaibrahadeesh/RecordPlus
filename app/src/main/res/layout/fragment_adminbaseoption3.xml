@@ -5,10 +5,25 @@
     android:layout_height="match_parent"
     tools:context=".adminbaseoption3">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/img">
+
+
+        <TextView
+            android:id="@+id/TV2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/divider"
+            android:layout_marginTop="30dp"
+            android:textColor="#FFFFFF"/>
+
+
+    </RelativeLayout>
 
 </FrameLayout>

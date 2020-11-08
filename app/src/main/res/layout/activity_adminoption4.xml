@@ -19,7 +19,7 @@
         android:textSize="32sp"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:textColor="#FFFFFF"/>
 
     <EditText

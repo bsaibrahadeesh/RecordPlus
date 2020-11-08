@@ -1,5 +1,9 @@
 package com.example.healthproject;
 
+import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.Toolbar;
@@ -8,27 +12,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.content.Context;
-import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class adminbaseoption1 extends Fragment {
+
+public class adminbaseoption1 extends Fragment implements View.OnClickListener{
+    EditText rollno;
+    Button enter;
+    SQLiteDatabase db;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,11 +62,42 @@ public class adminbaseoption1 extends Fragment {
         }
     }
 
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_adminbaseoption1, container, false);
+        View view =inflater.inflate(R.layout.fragment_adminbaseoption1, container, false);
+        rollno=view.findViewById(R.id.rollno1_);
 
+        enter=view.findViewById(R.id.button1);
+        enter.setOnClickListener(this);
+
+
+        db = getActivity().openOrCreateDatabase("StudentDB", Context.MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS Student(rollno VARCHAR,name VARCHAR,password VARCHAR,emailid VARCHAR,phonenumber VARCHAR,dateofbirth VARCHAR,parentnumber1 VARCHAR,parentnumber2 VARCHAR,hostel VARCHAR,roomno VARCHAR);");
+        return view;
+    }
+    @Override
+    public void onClick(View view) {
+        int flag=0;
+        if(rollno.getText().toString().length()==0)
+        {
+            Toast.makeText(getActivity(), "Enter Student Rollno", Toast.LENGTH_LONG).show();
+            flag=-1;
+        }
+        Cursor c = db.rawQuery("SELECT * FROM Student WHERE rollno='" + rollno.getText() + "'", null);
+        if (c.moveToFirst()) {
+            rollno.setText("");
+            Intent i = new Intent(getActivity(), choicepage.class);
+            i.putExtra("rollno", c.getString(0));
+            Toast.makeText(getActivity(), "Successfully Logged In", Toast.LENGTH_LONG).show();
+            startActivity(i);
+        }
+        else if(flag==0) {
+            Toast.makeText(getActivity(), "No Such roll no Exist", Toast.LENGTH_SHORT).show();
+        }
     }
 }
