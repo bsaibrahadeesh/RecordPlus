@@ -1,115 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
-    tools:context=".adminbase">
+    tools:context=".adminbase"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container"
+        >
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
+        <!-- Main content -->
 
-    <TextView
-        android:id="@+id/TV1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Student Details"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:textColor="#FFFFFF"/>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimary"
+            app:itemIconTint="@color/cardview_light_background"
+            app:itemTextColor="@color/design_default_color_surface"
+            app:menu="@menu/bottom_navigationadminbase_menu"
+            />
 
-    <EditText
-        android:id="@+id/rollno1_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/TV1"
-        android:ems="10"
-        android:hint="Roll Number"
-        android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="22sp" />
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/rollno1_"
-        android:layout_marginTop="50dp"
-        android:text="Enter"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:textSize="22sp"/>
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="wrap_content"
-        android:layout_height="3dp"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="50dp"
-        android:background="#FFFFFF" />
-
-    <TextView
-        android:id="@+id/TV2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Room Details"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/divider"
-        android:layout_marginTop="30dp"
-        android:textColor="#FFFFFF"/>
-
-    <EditText
-        android:id="@+id/roomno1_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TV2"
-        android:layout_centerHorizontal="true"
-        android:hint="Room no"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF" />
-
-    <Spinner
-        android:id="@+id/Hostel1_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/roomno1_"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:outlineAmbientShadowColor="@color/colorPrimary"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="22dp" />
-
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_below="@+id/Hostel1_"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
-        android:text="Find Details"
-        android:layout_width="185dp"
-        android:layout_height="50dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:textSize="22sp"/>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
