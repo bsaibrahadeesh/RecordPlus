@@ -31,13 +31,13 @@ public class adminbase extends AppCompatActivity{
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
-                        case R.id.navigation_home:
+                        case R.id.navigation_studinfo:
                             openFragment(adminbaseoption1.newInstance("", ""));
                             return true;
-                        case R.id.navigation_sms:
+                        case R.id.navigation_roommates:
                             openFragment(adminbaseoption2.newInstance("", ""));
                             return true;
-                        case R.id.navigation_notifications:
+                        case R.id.navigation_admincommonsetting:
                             openFragment(adminbaseoption3.newInstance("", ""));
                             return true;
                     }
