@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".adminbaseoption1">
 
-
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
 </FrameLayout>
