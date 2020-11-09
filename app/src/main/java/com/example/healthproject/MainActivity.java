@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void onClick(View view)
     {
-        Toast.makeText(this,"You clicked on the button", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this,"You clicked on the button", Toast.LENGTH_LONG).show();
         Log.i("MainActivity","Button clicked");
         Intent i = new Intent(this, secondpage.class);
         startActivity(i);

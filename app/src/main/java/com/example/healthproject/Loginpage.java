@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,8 +41,10 @@ public class Loginpage extends AppCompatActivity {
             public void onClick(View v) {
                 // load First Fragment
                 loadFragment(new FirstFragment());
-                firstFragment.setTextColor(Color.rgb(25, 140, 35));
                 secondFragment.setTextColor(Color.BLACK);
+                secondFragment.setBackgroundResource(R.drawable.buttonshape);
+                firstFragment.setTextColor(Color.rgb(25, 140, 35));
+                firstFragment.setBackgroundResource(R.drawable.btnselected);
             }
         });
 
@@ -51,8 +54,10 @@ public class Loginpage extends AppCompatActivity {
             public void onClick(View v) {
                 // load Second Fragment
                 loadFragment(new SecondFragment());
-                secondFragment.setTextColor(Color.rgb(25, 140, 35));
                 firstFragment.setTextColor(Color.BLACK);
+                firstFragment.setBackgroundResource(R.drawable.buttonshape);
+                secondFragment.setTextColor(Color.rgb(25, 140, 35));
+                secondFragment.setBackgroundResource(R.drawable.btnselected);
             }
         });
     }
