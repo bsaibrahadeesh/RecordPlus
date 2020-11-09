@@ -35,14 +35,14 @@ public class secondpage extends AppCompatActivity {
 
     public void Registergo(View view)
     {
-        Toast.makeText(this,"You clicked on the button", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this,"You clicked on the button", Toast.LENGTH_LONG).show();
         Log.i("MainActivity","Button clicked");
         Intent j = new Intent(this, Registerpage.class);
         startActivity(j);
     }
     public void Logingo(View view)
     {
-        Toast.makeText(this,"You clicked on the button", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this,"You clicked on the button", Toast.LENGTH_LONG).show();
         Log.i("MainActivity","Button clicked");
         Intent k = new Intent(this, Loginpage.class);
         startActivity(k);
