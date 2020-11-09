@@ -17,8 +17,8 @@ public class choicepage extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choicepage);
 
+        setContentView(R.layout.activity_choicepage);
         Toolbar toolbar =findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -39,7 +39,8 @@ public class choicepage extends AppCompatActivity implements View.OnClickListene
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // handle arrow click here
-        if (item.getItemId() == android.R.id.home) {
+        if (item.getItemId() == android.R.id.home)
+        {
             finish(); // close this activity and return to preview activity (if there is any)
         }
 
@@ -63,12 +64,6 @@ public class choicepage extends AppCompatActivity implements View.OnClickListene
         else if(view==btn3)
         {
             Intent i = new Intent(getApplicationContext(), adminoption3.class);
-            i.putExtra("rollno1",name);
-            startActivity(i);
-        }
-        else
-        {
-            Intent i = new Intent(getApplicationContext(), adminoption4.class);
             i.putExtra("rollno1",name);
             startActivity(i);
         }
