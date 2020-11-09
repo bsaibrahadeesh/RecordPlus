@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".adminoption4" />
-        <activity android:name=".adminoption3" />
-        <activity android:name=".adminoption2" />
-        <activity android:name=".adminoption1" />
         <activity android:name=".userbase" />
         <activity android:name=".choicepage" />
         <activity android:name=".adminbase" />

@@ -242,6 +242,7 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
         roomno.setText("");
         emailid.requestFocus();
         dob.setText("");
+        hostel.setSelection(0);
         flag=0;
     }
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)

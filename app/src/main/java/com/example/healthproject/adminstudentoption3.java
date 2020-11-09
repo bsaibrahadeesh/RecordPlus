@@ -1,7 +1,11 @@
 package com.example.healthproject;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,6 +18,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class adminstudentoption3 extends Fragment {
+    AlertDialog.Builder al;
+    SQLiteDatabase db;
+    String temp1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,8 +67,30 @@ public class adminstudentoption3 extends Fragment {
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_adminstudentoption3, container, false);
         Bundle arguments = getArguments();
-        String desired_string = arguments.getString("message");
-
+        temp1 = arguments.getString("message");
+        db = getActivity().openOrCreateDatabase("AdminDB", Context.MODE_PRIVATE, null);
+        db.execSQL("CREATE TABLE IF NOT EXISTS report(rollno VARCHAR,doctorname VARCHAR,startdate VARCHAR,enddate VARCHAR,time VARCHAR,description VARCHAR,medicine VARCHAR,test VARCHAR);");
+        Cursor c = db.rawQuery("SELECT * FROM report WHERE rollno='" + temp1 + "'", null);
+        al=new AlertDialog.Builder(getActivity());
+        al.setTitle("Report");
+        if (c.getCount() == 0) {
+            al.setMessage("No record found");
+        }
+        else
+        {
+            StringBuffer buffer1 = new StringBuffer();
+            while (c.moveToNext())
+            {
+                buffer1.append("Doctor Name: " + c.getString(1) + "\n");
+                buffer1.append("Startdate: " + c.getString(2) + "\n");
+                buffer1.append("End Date: " + c.getString(3) + "\n");
+                buffer1.append("Time: " + c.getString(4) + "\n");
+                buffer1.append("Description: " + c.getString(5) + "\n");
+                buffer1.append("Medicine: " + c.getString(6) + "\n");
+            }
+            al.setMessage(buffer1.toString());
+        }
+        al.show();
         return view;
     }
 }
