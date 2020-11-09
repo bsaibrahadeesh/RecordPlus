@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_aboutstudent"
+        android:icon="@drawable/ic_aboutstudent"
+        android:title="Student details" />
+
+    <item
+        android:id="@+id/navigation_addreport"
+        android:icon="@drawable/ic_addreport"
+        android:title="Add Report" />
+
+    <item
+        android:id="@+id/navigation_viewreport"
+        android:icon="@drawable/ic_viewreport"
+        android:title="View Report" />
+</menu>

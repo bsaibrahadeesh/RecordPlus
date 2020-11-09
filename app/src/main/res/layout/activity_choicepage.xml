@@ -1,73 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
-    tools:context=".userbase">
+    tools:context=".adminbase"
+    >
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-44dp"
+        tools:layout_editor_absoluteY="102dp">
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:text="Student Profile"
-        android:layout_width="240dp"
-        android:layout_height="60dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:textSize="22sp"/>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+        <!-- Main content -->
 
-    <Button
-        android:id="@+id/btn2"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/btn1"
-        android:layout_marginTop="70dp"
-        android:text="Reports"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:textSize="22sp"/>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimary"
+            app:itemIconTint="@color/cardview_light_background"
+            app:itemTextColor="@color/design_default_color_surface"
+            app:menu="@menu/bottom_navigationadminstudent_menu" />
 
-    <Button
-        android:id="@+id/btn3"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/btn2"
-        android:layout_marginTop="70dp"
-        android:text="Add Report"
-        android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:textSize="22sp"/>
+    </FrameLayout>
 
-    <Button
-        android:id="@+id/btn4"
-        android:layout_width="140dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/btn3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:text="Settings"
-        android:textSize="22sp" />
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

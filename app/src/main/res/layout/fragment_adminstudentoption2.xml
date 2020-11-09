@@ -4,11 +4,190 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".adminstudentoption2">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/img">
+
+        <Spinner
+            android:id="@+id/docname"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp" />
+
+        <EditText
+            android:id="@+id/startdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/docname"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Start Date"
+            android:inputType="date"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/date1_"
+            android:text="Date"
+            android:layout_below="@+id/docname"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/startdate"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/enddate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/startdate"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="End Date"
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/date2_"
+            android:layout_below="@+id/startdate"
+            android:text="Date"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/enddate"
+            android:layout_marginLeft="15dp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/enddate"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Time"
+            android:inputType="time"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/timebutton"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/enddate"
+            android:layout_toRightOf="@+id/time"
+            android:layout_marginLeft="15dp"
+            android:text="Time"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:textSize="18sp"/>
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/description"
+            android:layout_width="255dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/time"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:hint="Description"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp" />
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/medicine"
+            android:layout_width="255dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:hint="Medicine"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp" />
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/test"
+            android:layout_width="255dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/medicine"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:hint="Test Taken"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/create"
+            android:text="Create"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@+id/test"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/clear3"
+            android:text="clear"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@+id/create"
+            android:layout_marginLeft="30dp"
+            android:layout_below="@+id/test"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:textSize="20sp"/>
+
+        <ImageButton
+            android:id="@+id/shared"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/test"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@+id/clear3"
+            android:background="?attr/actionModeShareDrawable"
+            android:shadowColor="@color/cardview_light_background"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
 
 </FrameLayout>

@@ -5,110 +5,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img"
-    tools:context=".adminbase">
+    tools:context=".userbase">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
 
-    <TextView
-        android:id="@+id/TV1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Student Details"
-        android:textSize="32sp"
-        android:textStyle="bold"
+    <Button
+        android:id="@+id/btn1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:textColor="#FFFFFF"/>
+        android:layout_marginTop="120dp"
+        android:text="Student Profile"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:textSize="22sp"/>
 
-    <EditText
-        android:id="@+id/rollno1_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btn2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/TV1"
-        android:ems="10"
-        android:hint="Roll Number"
-        android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
+        android:layout_below="@+id/btn1"
+        android:layout_marginTop="70dp"
+        android:text="Reports"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:textSize="22sp"/>
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn2"
+        android:layout_marginTop="70dp"
+        android:text="Add Report"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:textSize="22sp"/>
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/btn3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="Settings"
         android:textSize="22sp" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/rollno1_"
-        android:layout_marginTop="50dp"
-        android:text="Enter"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:textSize="22sp"/>
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="wrap_content"
-        android:layout_height="3dp"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="50dp"
-        android:background="#FFFFFF" />
-
-    <TextView
-        android:id="@+id/TV2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Room Details"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/divider"
-        android:layout_marginTop="30dp"
-        android:textColor="#FFFFFF"/>
-
-    <EditText
-        android:id="@+id/roomno1_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TV2"
-        android:layout_centerHorizontal="true"
-        android:hint="Room no"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF" />
-
-    <Spinner
-        android:id="@+id/Hostel1_"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/roomno1_"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:outlineAmbientShadowColor="@color/colorPrimary"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="22dp" />
-
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_below="@+id/Hostel1_"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
-        android:text="Find Details"
-        android:layout_width="185dp"
-        android:layout_height="50dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:textSize="22sp"/>
-
 </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
