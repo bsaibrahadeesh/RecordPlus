@@ -72,21 +72,24 @@ public class adminstudentoption3 extends Fragment {
         db.execSQL("CREATE TABLE IF NOT EXISTS report(rollno VARCHAR,doctorname VARCHAR,startdate VARCHAR,enddate VARCHAR,time VARCHAR,description VARCHAR,medicine VARCHAR,test VARCHAR);");
         Cursor c = db.rawQuery("SELECT * FROM report WHERE rollno='" + temp1 + "'", null);
         al=new AlertDialog.Builder(getActivity());
-        al.setTitle("Report");
+        al.setTitle("Reports");
         if (c.getCount() == 0) {
-            al.setMessage("No record found");
+            al.setMessage("No Record found");
         }
         else
         {
             StringBuffer buffer1 = new StringBuffer();
+            int i=1;
             while (c.moveToNext())
             {
+                buffer1.append("Report-" + i + " :\n");
                 buffer1.append("Doctor Name: " + c.getString(1) + "\n");
                 buffer1.append("Startdate: " + c.getString(2) + "\n");
                 buffer1.append("End Date: " + c.getString(3) + "\n");
                 buffer1.append("Time: " + c.getString(4) + "\n");
                 buffer1.append("Description: " + c.getString(5) + "\n");
-                buffer1.append("Medicine: " + c.getString(6) + "\n");
+                buffer1.append("Medicine: " + c.getString(6) + "\n\n");
+                i = i+1;
             }
             al.setMessage(buffer1.toString());
         }

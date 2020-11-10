@@ -96,14 +96,14 @@ public class adminbaseoption2 extends Fragment implements View.OnClickListener, 
     public void onClick(View view) {
         if(temp=="" || roomno.getText().toString().length()==0)
         {
-            Toast.makeText(getActivity(), "Select Hostelname/Room no", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Select Hostelname & Room number", Toast.LENGTH_LONG).show();
         }
         else {
             Cursor c = db.rawQuery("SELECT * FROM Student WHERE hostel='" + temp + "' and roomno='" + roomno.getText() + "'", null);
             al = new AlertDialog.Builder(getActivity());
             al.setTitle("Roommates");
             if (c.getCount() == 0) {
-                al.setMessage("No record found");
+                al.setMessage("No Record found");
                 return;
             } else {
                 StringBuffer buffer = new StringBuffer();

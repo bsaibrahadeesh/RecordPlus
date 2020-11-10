@@ -145,6 +145,7 @@ public class adminstudentoption1 extends Fragment implements View.OnClickListene
                 roomno.setEnabled(true);
                 hostel.setEnabled(true);
                 flag=0;
+                Toast.makeText(getActivity(), "Modification Enabled", Toast.LENGTH_SHORT).show();
             }
             else
             {
@@ -162,31 +163,31 @@ public class adminstudentoption1 extends Fragment implements View.OnClickListene
                     {
                         if(validateEmail(email.getText().toString())==false)
                         {
-                            Toast.makeText(getActivity(), "Enter Valid email id", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Enter Valid Email ID", Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
                             if(parentno1.getText().toString().length()!=10)
                             {
-                                Toast.makeText(getActivity(), "Enter Valid Parent number 1", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Enter Valid Parent Phone number 1", Toast.LENGTH_SHORT).show();
                             }
                             else
                             {
                                 if(parentno2.getText().toString().length()!=10)
                                 {
-                                    Toast.makeText(getActivity(), "Enter Valid Parent number 2", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getActivity(), "Enter Valid Parent Phone number 2", Toast.LENGTH_SHORT).show();
                                 }
                                 else
                                 {
                                     if(temp1=="")
                                     {
-                                        Toast.makeText(getActivity(), "Select hostel", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getActivity(), "Select Hostel Name", Toast.LENGTH_SHORT).show();
                                     }
                                     else
                                     {
                                         if(roomno.getText().toString().length()==0)
                                         {
-                                            Toast.makeText(getActivity(), "Enter Valid room no", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getActivity(), "Enter Valid Room Number", Toast.LENGTH_SHORT).show();
                                         }
                                         else
                                         {
@@ -199,6 +200,7 @@ public class adminstudentoption1 extends Fragment implements View.OnClickListene
                                             hostel.setEnabled(false);
                                             flag=-1;
                                             flag1=0;
+                                            Toast.makeText(getActivity(), "Modified details, please save them", Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 }
@@ -215,7 +217,7 @@ public class adminstudentoption1 extends Fragment implements View.OnClickListene
                 if(flag1==0)
                 {
                     al=new AlertDialog.Builder(getActivity());
-                    al.setTitle("Verify");
+                    al.setTitle("Verify and click save");
                     StringBuffer buffer = new StringBuffer();
                     buffer.append("Rollno: " + rollno.getText().toString() + "\n");
                     buffer.append("Name: " + name.getText().toString() + "\n");
@@ -237,7 +239,7 @@ public class adminstudentoption1 extends Fragment implements View.OnClickListene
             }
             else
             {
-                Toast.makeText(getActivity(), "Cannot save changes modify correctly", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Cannot save changes, modify correctly", Toast.LENGTH_SHORT).show();
             }
         }
         else

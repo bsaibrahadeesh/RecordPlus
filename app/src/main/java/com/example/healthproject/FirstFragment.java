@@ -56,7 +56,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
                 Toast.makeText(getActivity(), "Successfully Logged In", Toast.LENGTH_LONG).show();
                 startActivity(i);
             } else {
-                Toast.makeText(getActivity(), "Invalid Rollno/password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Invalid Rollno/Password", Toast.LENGTH_SHORT).show();
             }
     }
 

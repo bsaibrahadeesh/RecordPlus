@@ -85,7 +85,7 @@ public class adminbaseoption1 extends Fragment implements View.OnClickListener{
         int flag=0;
         if(rollno.getText().toString().length()==0)
         {
-            Toast.makeText(getActivity(), "Enter Student Rollno", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Enter Student Roll number", Toast.LENGTH_LONG).show();
             flag=-1;
         }
         Cursor c = db.rawQuery("SELECT * FROM Student WHERE rollno='" + rollno.getText() + "'", null);
@@ -93,11 +93,11 @@ public class adminbaseoption1 extends Fragment implements View.OnClickListener{
             rollno.setText("");
             Intent i = new Intent(getActivity(), choicepage.class);
             i.putExtra("rollno", c.getString(0));
-            Toast.makeText(getActivity(), "Successfully Logged In", Toast.LENGTH_LONG).show();
+//            Toast.makeText(getActivity(), "Successfully Logged In", Toast.LENGTH_LONG).show();
             startActivity(i);
         }
         else if(flag==0) {
-            Toast.makeText(getActivity(), "No Such roll no Exist", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "No Such Roll number Exists", Toast.LENGTH_SHORT).show();
         }
     }
 }

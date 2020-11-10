@@ -155,7 +155,7 @@ public class adminstudentoption2 extends Fragment implements View.OnClickListene
                 {
                     if(enddate.getText().toString().length()==0)
                     {
-                        Toast.makeText(getActivity(), "Enter Patient depart date", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Enter Patient discharge date", Toast.LENGTH_SHORT).show();
                     }
                     else
                     {
@@ -167,13 +167,13 @@ public class adminstudentoption2 extends Fragment implements View.OnClickListene
                         {
                             if(medicine.getText().toString().length()==0)
                             {
-                                Toast.makeText(getActivity(), "Enter medicines details", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Enter medicine details", Toast.LENGTH_SHORT).show();
                             }
                             else
                             {
                                 if(test.getText().toString().length()==0)
                                 {
-                                    Toast.makeText(getActivity(), "Enter test to be taken", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getActivity(), "Enter test taken", Toast.LENGTH_SHORT).show();
                                 }
                                 else {
                                     try{
@@ -196,8 +196,8 @@ public class adminstudentoption2 extends Fragment implements View.OnClickListene
         {
             cleared();
         }
-        else{
-            Toast.makeText(getActivity(), "Report send to their parents sucessfully", Toast.LENGTH_LONG).show();
+        else if(view == share){
+            Toast.makeText(getActivity(), "Report sent to their parents sucessfully", Toast.LENGTH_LONG).show();
         }
     }
     public void onDateSet(DatePicker datePicker, int dayOfMonth, int monthOfYear, int year)

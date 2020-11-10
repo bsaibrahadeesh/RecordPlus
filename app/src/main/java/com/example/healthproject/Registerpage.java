@@ -89,6 +89,7 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
         {
             final Calendar c = Calendar.getInstance();
             DatePickerDialog datePickerDialog = new DatePickerDialog(this, this, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+            datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
             datePickerDialog.show();
         }
         else if(view==clear)
@@ -99,7 +100,7 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
         {
             if(rollno.getText().toString().length()!=16)
             {
-                Toast.makeText(this, "Enter valid Rollno", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Enter valid Roll number", Toast.LENGTH_SHORT).show();
                 flag=0;
             }
             else
@@ -113,7 +114,7 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
                 {
                     if(pass1.getText().toString().length()<6)
                     {
-                        Toast.makeText(this, "Password length>=6", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Password length >= 6", Toast.LENGTH_SHORT).show();
                         flag=0;
                     }
                     else
@@ -125,7 +126,7 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
                         }
                         else if(pass1.getText().toString().equals(pass2.getText().toString())==false)
                         {
-                            Toast.makeText(this, "Passwords doesnt match", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                             flag=0;
                         }
                         else
@@ -172,7 +173,7 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
                                             {
                                                 if(roomno.getText().toString().length()==0)
                                                 {
-                                                    Toast.makeText(getApplicationContext(), "Enter hostel room no", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(getApplicationContext(), "Enter hostel Room number", Toast.LENGTH_SHORT).show();
                                                     flag=0;
                                                 }
                                                 else
@@ -180,7 +181,7 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
                                                     if(flag==0)
                                                     {
                                                         al=new AlertDialog.Builder(this);
-                                                        al.setTitle("Verify");
+                                                        al.setTitle("Verify and click save");
                                                         StringBuffer buffer = new StringBuffer();
                                                         buffer.append("Rollno: " + rollno.getText().toString() + "\n");
                                                         buffer.append("Name: " + name.getText().toString() + "\n");
@@ -214,7 +215,7 @@ public class Registerpage extends AppCompatActivity implements View.OnClickListe
                                                         }catch (Exception e){
                                                             Log.i("Error", e.getMessage().toString());
                                                         }
-                                                        Toast.makeText(getApplicationContext(), "Resgisteration successful!", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getApplicationContext(), "Registration successful!", Toast.LENGTH_SHORT).show();
                                                         cleared();
                                                         Intent i = new Intent(this, secondpage.class);
                                                         startActivity(i);

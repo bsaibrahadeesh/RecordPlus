@@ -3,15 +3,15 @@
     <item
         android:id="@+id/navigation_studinfo"
         android:icon="@drawable/ic_studport"
-        android:title="Student details" />
+        android:title="Student Details" />
 
     <item
         android:id="@+id/navigation_roommates"
         android:icon="@drawable/ic_roommates"
-        android:title="Room Mates" />
+        android:title="Roommates" />
 
     <item
         android:id="@+id/navigation_admincommonsetting"
         android:icon="@drawable/ic_admincommonsetting"
-        android:title="Setting" />
+        android:title="Settings" />
 </menu>
