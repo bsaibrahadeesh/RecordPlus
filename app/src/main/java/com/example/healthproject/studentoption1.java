@@ -82,7 +82,7 @@ public class studentoption1 extends Fragment implements View.OnClickListener, Ad
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_adminstudentoption1, container, false);
+        View view = inflater.inflate(R.layout.fragment_studentoption1, container, false);
         Bundle arguments = getArguments();
         temp = arguments.getString("message");
         rollno = view.findViewById(R.id.rollno2_);
@@ -96,8 +96,8 @@ public class studentoption1 extends Fragment implements View.OnClickListener, Ad
         save = view.findViewById(R.id.Save1_);
         clear = view.findViewById(R.id.Clear1_);
         hostel = (Spinner) view.findViewById(R.id.Hostel1_);
-        pass1 = view.findViewById(R.id.Password_);
-        pass2 = view.findViewById(R.id.Password1_);
+        pass1 = view.findViewById(R.id.pwd1_);
+        pass2 = view.findViewById(R.id.pwd2_);
         modify.setOnClickListener(this);
         save.setOnClickListener(this);
         clear.setOnClickListener(this);
@@ -128,6 +128,8 @@ public class studentoption1 extends Fragment implements View.OnClickListener, Ad
         email.setEnabled(false);
         roomno.setEnabled(false);
         hostel.setEnabled(false);
+        pass1.setEnabled(false);
+        pass2.setEnabled(false);
         return view;
     }
 
@@ -142,6 +144,8 @@ public class studentoption1 extends Fragment implements View.OnClickListener, Ad
                 email.setEnabled(true);
                 roomno.setEnabled(true);
                 hostel.setEnabled(true);
+                pass1.setEnabled(true);
+                pass2.setEnabled(true);
                 flag = 0;
                 Toast.makeText(getActivity(), "Modification Enabled", Toast.LENGTH_SHORT).show();
             } else {
@@ -165,32 +169,54 @@ public class studentoption1 extends Fragment implements View.OnClickListener, Ad
                                     } else {
                                         if (roomno.getText().toString().length() == 0) {
                                             Toast.makeText(getActivity(), "Enter Valid Room Number", Toast.LENGTH_SHORT).show();
-                                        } else {
-                                            if (pass1.getText().toString().length() < 6) {
+                                        }
+                                        else if(pass1.getText().toString().length()>0)
+                                        {
+                                            if(pass1.getText().toString().length() < 6)
+                                            {
                                                 Toast.makeText(getActivity(), "Password length >= 6", Toast.LENGTH_SHORT).show();
                                                 flag = 0;
-                                            } else {
-                                                if (pass2.getText().toString().length() == 0) {
-                                                    Toast.makeText(getActivity(), "Enter Confirm password", Toast.LENGTH_SHORT).show();
-                                                    flag = 0;
-                                                } else {
-                                                    if (pass1.getText().toString().equals(pass2.getText().toString()) == false) {
-                                                        Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
-                                                        flag = 0;
-                                                    } else {
-                                                        name.setEnabled(false);
-                                                        phno.setEnabled(false);
-                                                        parentno1.setEnabled(false);
-                                                        parentno2.setEnabled(false);
-                                                        email.setEnabled(false);
-                                                        roomno.setEnabled(false);
-                                                        hostel.setEnabled(false);
-                                                        flag = -1;
-                                                        flag1 = 0;
-                                                        Toast.makeText(getActivity(), "Modified details, please save them", Toast.LENGTH_SHORT).show();
-                                                    }
-                                                }
                                             }
+                                            else if(pass2.getText().toString().length() == 0)
+                                            {
+                                                Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                                                flag = 0;
+                                            }
+                                            else if(pass1.getText().toString().equals(pass2.getText().toString()) == false)
+                                            {
+                                                Toast.makeText(getActivity(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                                                flag = 0;
+                                            }
+                                            else
+                                            {
+                                                name.setEnabled(false);
+                                                phno.setEnabled(false);
+                                                parentno1.setEnabled(false);
+                                                parentno2.setEnabled(false);
+                                                email.setEnabled(false);
+                                                roomno.setEnabled(false);
+                                                hostel.setEnabled(false);
+                                                pass1.setEnabled(false);
+                                                pass2.setEnabled(false);
+                                                flag = -1;
+                                                flag1 = 0;
+                                                Toast.makeText(getActivity(), "Modified details, please save them", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            name.setEnabled(false);
+                                            phno.setEnabled(false);
+                                            parentno1.setEnabled(false);
+                                            parentno2.setEnabled(false);
+                                            email.setEnabled(false);
+                                            roomno.setEnabled(false);
+                                            hostel.setEnabled(false);
+                                            pass1.setEnabled(false);
+                                            pass2.setEnabled(false);
+                                            flag = -1;
+                                            flag1 = 0;
+                                            Toast.makeText(getActivity(), "Modified details, please save them", Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 }
@@ -242,6 +268,8 @@ public class studentoption1 extends Fragment implements View.OnClickListener, Ad
         int spinnerPosition = adap2.getPosition(c.getString(8));
         hostel.setSelection(spinnerPosition);
         roomno.setText(c.getString(9));
+        pass1.setText("");
+        pass2.setText("");
         name.setEnabled(false);
         phno.setEnabled(false);
         parentno1.setEnabled(false);
@@ -249,6 +277,8 @@ public class studentoption1 extends Fragment implements View.OnClickListener, Ad
         email.setEnabled(false);
         roomno.setEnabled(false);
         hostel.setEnabled(false);
+        pass1.setEnabled(false);
+        pass2.setEnabled(false);
     }
 
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

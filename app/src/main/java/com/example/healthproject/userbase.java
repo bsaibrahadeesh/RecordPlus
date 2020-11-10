@@ -26,10 +26,16 @@ import android.widget.Toast;
 
 public class userbase extends AppCompatActivity {
     BottomNavigationView bottomNavigation;
+    String value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userbase);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            value = extras.getString("rollno");
+            //The key argument here must match that used in the other activity
+        }
         bottomNavigation = findViewById(R.id.bottom_navigation);
         bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
         Toolbar toolbar =findViewById(R.id.toolbar);
@@ -50,6 +56,10 @@ public class userbase extends AppCompatActivity {
 
     public void openFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        Bundle bundle = new Bundle();
+        String myMessage = value;
+        bundle.putString("message", myMessage);
+        fragment.setArguments(bundle);
         transaction.replace(R.id.container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
