@@ -104,7 +104,6 @@ public class adminbaseoption2 extends Fragment implements View.OnClickListener, 
             al.setTitle("Roommates");
             if (c.getCount() == 0) {
                 al.setMessage("No Record found");
-                return;
             } else {
                 StringBuffer buffer = new StringBuffer();
                 while (c.moveToNext()) {

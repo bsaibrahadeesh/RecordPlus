@@ -106,7 +106,7 @@ public class adminstudentoption1 extends Fragment implements View.OnClickListene
         hostel.setAdapter(adap2);
         hostel.setOnItemSelectedListener(this);
         flag=-1;
-        flag1=0;
+        flag1=-1;
         db = getActivity().openOrCreateDatabase("StudentDB", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS Student(rollno VARCHAR,name VARCHAR,password VARCHAR,emailid VARCHAR,phonenumber VARCHAR,dateofbirth VARCHAR,parentnumber1 VARCHAR,parentnumber2 VARCHAR,hostel VARCHAR,roomno VARCHAR);");
         Cursor c = db.rawQuery("SELECT * FROM Student WHERE rollno='" + temp + "'", null);
@@ -231,7 +231,7 @@ public class adminstudentoption1 extends Fragment implements View.OnClickListene
                     al.show();
                     flag1=1;
                 }
-                else
+                else if(flag1==1)
                 {
                     db.execSQL("UPDATE student SET name='" + name.getText() + "',emailid='"+email.getText()+"',phonenumber='"+phno.getText()+"',parentnumber1='"+parentno1.getText()+"',parentnumber2='"+parentno2.getText()+"',hostel='"+temp1+"',roomno='"+roomno.getText()+"' WHERE rollno='" + temp + "'");
                     Toast.makeText(getActivity(), "Successfully saved changes", Toast.LENGTH_SHORT).show();

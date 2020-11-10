@@ -120,12 +120,14 @@ public class adminstudentoption2 extends Fragment implements View.OnClickListene
             flag=0;
             final Calendar c1 = Calendar.getInstance();
             DatePickerDialog datePickerDialog1 = new DatePickerDialog(getActivity(), this, c1.get(Calendar.YEAR), c1.get(Calendar.MONTH), c1.get(Calendar.DAY_OF_MONTH));
+            datePickerDialog1.getDatePicker().setMaxDate(System.currentTimeMillis());
             datePickerDialog1.show();
         }
         if (view == date2) {
             flag=1;
             final Calendar c = Calendar.getInstance();
             DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), this, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+            datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
             datePickerDialog.show();
         }
         if(view==timebutton)
