@@ -3,7 +3,10 @@ package com.example.healthproject;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -36,8 +39,8 @@ public class adminstudentoption2 extends Fragment implements View.OnClickListene
     Button create, clear, date1, date2,timebutton;
     ImageButton share;
     int flag;
-    String temp,temp1;
-    SQLiteDatabase db;
+    String temp,temp1,phonenumbers;
+    SQLiteDatabase db,db1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -109,6 +112,8 @@ public class adminstudentoption2 extends Fragment implements View.OnClickListene
         adap2.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         docname.setAdapter(adap2);
         docname.setOnItemSelectedListener(this);
+        db1 = getActivity().openOrCreateDatabase("StudentDB", Context.MODE_PRIVATE, null);
+        db1.execSQL("CREATE TABLE IF NOT EXISTS Student(rollno VARCHAR,name VARCHAR,password VARCHAR,emailid VARCHAR,phonenumber VARCHAR,dateofbirth VARCHAR,parentnumber1 VARCHAR,parentnumber2 VARCHAR,hostel VARCHAR,roomno VARCHAR);");
         db = getActivity().openOrCreateDatabase("AdminDB", Context.MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS report(rollno VARCHAR,doctorname VARCHAR,startdate VARCHAR,enddate VARCHAR,time VARCHAR,description VARCHAR,medicine VARCHAR,test VARCHAR);");
         return view;
@@ -199,7 +204,13 @@ public class adminstudentoption2 extends Fragment implements View.OnClickListene
             cleared();
         }
         else if(view == share){
-            Toast.makeText(getActivity(), "Report sent to their parents sucessfully", Toast.LENGTH_LONG).show();
+            Cursor c = db1.rawQuery("SELECT * FROM Student WHERE rollno='" + temp1 + "'", null);
+            c.moveToFirst();
+                phonenumbers=c.getString(4)+";"+c.getString(6)+";"+c.getString(7);
+            Toast.makeText(getActivity(), phonenumbers, Toast.LENGTH_SHORT).show();
+            Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"+phonenumbers));
+            smsIntent.putExtra("sms_body", "Namashivaya, \n Your ward "+c.getString(1)+" is admitted in the college dispensary on:"+startdate.getText()+"\n"+"The staff is taking good care of your ward \n check out the details and reports here:");
+            startActivity(smsIntent);
         }
     }
     public void onDateSet(DatePicker datePicker, int dayOfMonth, int monthOfYear, int year)
